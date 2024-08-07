@@ -12,6 +12,9 @@
   </p>
 </div>
 
+<div align="center">
+  <img src="assets/features-banner.gif" alt="Setup gif" width="200">
+</div>
 ## Features
 
 - Create, edit, complete, and delete tasks
@@ -20,6 +23,9 @@
 - User-specific task lists
 - Persistent storage of tasks
 
+<div align="center">
+  <img src="assets/commands-banner.gif" alt="Commands Banner" width="200">
+</div>
 ## Commands
 
 - `>help`: Displays available commands
@@ -31,6 +37,9 @@
 - `>showall`: Displays all tasks
 - `>delall` or `>deleteall`: Deletes all tasks
 
+<div align="center">
+  <img src="assets/setup-banner.gif" alt="Setup gif" width="200">
+</div>
 ## Setup
 
 1. Clone the repository
