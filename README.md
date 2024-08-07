@@ -1,6 +1,15 @@
-# Discord Todo Bot
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/release/python-312/)
 
-A Discord bot for managing tasks and to-do lists within your server.
+<div align="center">
+
+  <h3 align="center">TOdo bot</h3>
+  
+  <p align="center">
+    project made in python 3.12
+    <br>
+    A discord bot for managing tasks and to-do lists within your server.
+  </p>
+</div>
 
 ## Features
 
@@ -24,15 +33,25 @@ A Discord bot for managing tasks and to-do lists within your server.
 ## Setup
 
 1. Clone the repository
-2. Install the required dependencies:
+2. Make sure you have Python 3.12 or higher installed.
+    You can check your version with :
+        `python --version`
+3. Install the required dependencies:
    
-   pip install discord pytz
+    `pip install discord pytz`
    
-3. Create a Discord bot and get the token from the [Discord Developer Portal](https://discord.com/developers/applications)
-4. Set up an environment variable named `TodoToken` with your bot token
-5. Run the bot:
+4. Create a Discord bot and get the token from the [Discord Developer Portal](https://discord.com/developers/applications)
+5. Set up an environment variable named `TodoToken` with your bot token
+
+    [Windows 10](https://www.youtube.com/watch?v=z84UIZy_qgE)
+    [Windows 11](https://www.youtube.com/watch?v=ow2jROvxyH4&t=2s)
+    [Linux (Ubuntu)](https://www.youtube.com/watch?v=Y6_7xaxkPik)
+    *if you can't seem to figure out how to do this, you can always just type your token in the code*
+        example: ```client.run("your_token_here")```
+
+6. Run the bot:
    
-   python main.py
+   `python main.py`
    
 
 ## File Structure
