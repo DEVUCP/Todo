@@ -59,7 +59,7 @@ def FindValidUser(userid : discord.User.id) -> int:
     # If no matching account is found, return -1
     return -1
 
-async def ExceptionReplyEmbed(message : discord.Message, error : str, desc : str) -> None:
+async def ExceptionReplyEmbed(message : discord.Message, error : str, desc : str = "") -> None:
     """
     Send an embed with an error message as the description.
 

@@ -241,10 +241,10 @@ async def CompleteTask(task_id : str, message : discord.Message):
     else:
         await utils.ExceptionReplyEmbed(message=message, error="Error: Task not found", desc="Use `>showall` to see all your tasks and their IDs")
 
-async def EditTask(command : str, message : discord.Message):
+async def EditTask(command : list[str], message : discord.Message):
     """Edits a task."""
     useracc = utils.GetAcc(message.author.id)
-    command = "".join(command)
+    command = " ".join(command)
     command = command.split(MASTER_SEPERATOR)
     try:
         new_desc = command[1]

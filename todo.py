@@ -33,7 +33,7 @@ class Task:
         try:
             return self.due <= datetime.datetime.now()
         except:
-            return True
+            return False
 
     def SetDone(self, set: bool):
         """
