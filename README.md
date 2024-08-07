@@ -3,6 +3,7 @@
 <div align="center">
 
   <h3 align="center">TOdo bot</h3>
+  <img src="assets/Bot-Icon.png" alt="Todo Bot Logo" width="200">
   
   <p align="center">
     project made in python 3.12
@@ -47,7 +48,7 @@
     [Windows 11](https://www.youtube.com/watch?v=ow2jROvxyH4&t=2s)
     [Linux (Ubuntu)](https://www.youtube.com/watch?v=Y6_7xaxkPik)
     *if you can't seem to figure out how to do this, you can always just type your token in the code*
-        example: ```client.run("your_token_here")```
+        example: client.run("your_token_here")
 
 6. Run the bot:
    

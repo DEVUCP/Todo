@@ -4,7 +4,6 @@ __pycache__/
 *$py.class
 
 # Own files & folders
-assets/
 user_accounts.json
 
 # C extensions
