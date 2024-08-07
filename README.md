@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<h3 align="center">TOdo bot</h3>
+<h3 align="center">TOdo Bot</h3>
     <img src="assets/Bot-Icon.png" alt="Todo Bot Logo" width="200">
   <p align="center">
     project made in python 3.12
@@ -14,13 +14,16 @@
 <div align="center">
   <img src="assets/features-banner.gif" alt="Setup gif" width="">
 </div>
+
 ## Features
 
-- Create, edit, complete, and delete tasks
-- Set due dates for tasks
-- View individual tasks or all tasks at once
-- User-specific task lists
-- Persistent storage of tasks
+- Create, edit, complete, and delete tasks.
+- Set due dates for tasks.
+- View individual tasks or all tasks at once.
+- User-specific task lists.
+- Persistent storage of tasks.
+
+## _
 
 <div align="center">
   <img src="assets/commands-banner.gif" alt="Commands Banner" width="">
@@ -28,14 +31,16 @@
 
 ## Commands
 
-- `>help`: Displays available commands
-- `>new`: Creates a new task with description and duration
-- `>edit`: Edits an existing task by index
-- `>complete`: Marks a task as complete by index
-- `>delete`: Deletes a task by index
-- `>show`: Displays details of a specific task by index
-- `>showall`: Displays all tasks
-- `>delall` or `>deleteall`: Deletes all tasks
+- `>help`: Displays available commands.
+- `>new`: Creates a new task with description and duration.
+- `>edit`: Edits an existing task by index.
+- `>complete`: Marks a task as complete by index.
+- `>delete`: Deletes a task by index.
+- `>show`: Displays details of a specific task by index.
+- `>showall`: Displays all tasks.
+- `>delall` or `>deleteall`: Deletes all tasks.
+
+## _
 
 <div align="center">
   <img src="assets/setup-banner.gif" alt="Setup gif" width="">
@@ -44,40 +49,46 @@
 ## Setup
 
 1. Clone the repository
+
+   `git clone https://github.com/OH221105/Todo.git`
+
 2. Make sure you have Python 3.12 or higher installed.
    You can check your version with :
+
    `python --version`
+
 3. Install the required dependencies:
 
    `pip install discord pytz`
+   
 4. Create a Discord bot and get the token from the [Discord Developer Portal](https://discord.com/developers/applications)
-5. Set up an environment variable named `TodoToken` with your bot token
+5. Set up an environment variable named `TodoToken` with your bot token . . .
 
    [Windows 10](https://www.youtube.com/watch?v=z84UIZy_qgE)
 
    [Windows 11](https://www.youtube.com/watch?v=ow2jROvxyH4&t=2s)
 
    [Linux (Ubuntu)](https://www.youtube.com/watch?v=Y6_7xaxkPik)
-   
+
    *if you can't seem to figure out how to do this, you can always just type your token in the code*
-   example: client.run("your_token_here")
+   example: `client.run("your_token_here")`
 6. Run the bot:
 
    `python main.py`
 
 ## File Structure
 
-- `main.py`: Main bot logic and command handling
-- `saveload.py`: Functions for saving and loading user accounts and tasks
-- `singletons.py`: Singleton instance of the account list
-- `todo.py`: Classes for Task and UserAccount
-- `utils.py`: Utility functions for various operations
+- `main.py`: Main bot logic and command handling.
+- `saveload.py`: Functions for saving and loading user accounts and tasks.
+- `singletons.py`: Singleton instance of the account list.
+- `todo.py`: Classes for Task and UserAccount.
+- `utils.py`: Utility functions for various operations.
 
 ## Usage
 
-1. Invite the bot to your Discord server
-2. Use the commands listed above to manage your tasks
-3. Tasks are automatically saved and will persist between bot restarts
+1. Invite the bot to your Discord server.
+2. Use the commands listed above to manage your tasks.
+3. Tasks are automatically saved and will persist between bot restarts.
 
 ## Coding Conventions
 
@@ -88,8 +99,8 @@ The following coding conventions are used in this project:
 3. **Docstrings**: Functions and classes are documented using docstrings, providing information about parameters, return values, and functionality.
 4. **Naming Conventions**:
 
-   - Classes use PascalCase (e.g., `UserAccount`, `Task`)
-   - Functions and variables use snake_case (e.g., `get_task`, `user_id`)
+   - Functions and Classes use PascalCase (e.g., `UserAccount`, `Task`)
+   - Variables use snake_case (e.g., `get_task`, `user_id`)
    - Constants use UPPER_CASE (e.g., `MASTER_PREFIX`, `ACCEPTED_TIMEFORMAT`)
 5. **Error Handling**: Exceptions are caught and handled appropriately, with user-friendly error messages sent as Discord embeds.
 6. **Modular Structure**: The code is organized into separate files based on functionality (e.g., `main.py`, `todo.py`, `utils.py`).
