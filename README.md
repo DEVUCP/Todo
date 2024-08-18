@@ -50,7 +50,7 @@
 
 1. Clone the repository
 
-   `git clone https://github.com/OH221105/Todo.git`
+   `git clone https://github.com/DEVUCP/Todo.git`
 
 2. Make sure you have Python 3.12 or higher installed.
    You can check your version with :
