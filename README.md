@@ -50,16 +50,19 @@
 
 1. Clone the repository
 
-   `git clone https://github.com/DEVUCP/Todo.git`
+   ```bash
+   git clone https://github.com/DEVUCP/Todo.git```
 
 2. Make sure you have Python 3.12 or higher installed.
    You can check your version with :
 
-   `python --version`
+   ```bash
+   python --version```
 
 3. Install the required dependencies:
 
-   `pip install discord pytz`
+   ```bash
+   pip install discord pytz```
    
 4. Create a Discord bot and get the token from the [Discord Developer Portal](https://discord.com/developers/applications)
 5. Set up an environment variable named `TodoToken` with your bot token . . .
@@ -74,7 +77,8 @@
    example: `client.run("your_token_here")`
 6. Run the bot:
 
-   `python main.py`
+   ```bash
+   python main.py```
 
 ## File Structure
 
