@@ -64,20 +64,11 @@
 3. Install the required dependencies:
 
    ```bash
-   pip install discord pytz
+   pip install --no-cache-dir -r requirements.txt
    ```
    
 4. Create a Discord bot and get the token from the [Discord Developer Portal](https://discord.com/developers/applications)
-5. Set up an environment variable named `TodoToken` with your bot token . . .
-
-   [Windows 10](https://www.youtube.com/watch?v=z84UIZy_qgE)
-
-   [Windows 11](https://www.youtube.com/watch?v=ow2jROvxyH4&t=2s)
-
-   [Linux (Ubuntu)](https://www.youtube.com/watch?v=Y6_7xaxkPik)
-
-   *if you can't seem to figure out how to do this, you can always just type your token in the code*
-   example: `client.run("your_token_here")`
+5. replace "ENTER_YOUR_TOKEN_HERE" with your bot token in the `.env_example` file and rename it to `.env`
 6. Run the bot:
 
    ```bash
