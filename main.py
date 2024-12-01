@@ -5,6 +5,7 @@ import os
 import pytz
 import utils
 import singletons
+import dotenv
 from saveload import SaveAccounts, LoadAccounts
 
 class Client(discord.Client):
@@ -329,8 +330,6 @@ async def DeleteAllTasks(message : discord.Message):
 
 
 # If you don't have a token, create one at https://discord.com/developers/applications
-# Insert your own environment variable name instead of "TodoToken"
-# example : client.run(os.getenv("YourToken"))
-# If you don't have an environment variable, follow this guide: https://www.youtube.com/watch?v=ow2jROvxyH4 (windows 11)
-# If the video is not helpful, refer to the README.md file for more information.
-client.run(os.getenv("TodoToken"))
+# Enter your token in the .env_example file and rename it to .env
+dotenv.load_dotenv()
+client.run(os.getenv("token"))
