@@ -1,0 +1,12 @@
+services:
+  discord-bot:
+    build: .
+    container_name: todo-bot-container
+    env_file:
+      - .env
+    restart: unless-stopped
+    volumes:
+      - todo-user-data:/Todo/userdata
+  
+volumes:
+  todo-user-data:

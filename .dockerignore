@@ -1,0 +1,7 @@
+.github
+.gitignore
+LICENSE
+README.md
+.env*
+.json
+.env_example
