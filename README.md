@@ -69,11 +69,63 @@
    
 4. Create a Discord bot and get the token from the [Discord Developer Portal](https://discord.com/developers/applications)
 5. replace "ENTER_YOUR_TOKEN_HERE" with your bot token in the `.env_example` file and rename it to `.env`
-6. Run the bot:
+
+## Running the Bot
+
+### Docker
+<sub><i>Docker container (Dockerfile)</i></sub>
+
+>Note : You must know how to use Docker and set persistent storage for the user data.
+
+1. Build the Docker image:
+   ```bash
+   docker build -t todo-bot .
+   ```
+
+
+2. Run the Docker container:
+   ```bash
+   docker run --env-file .env --mount type=bind,source=/path/on/host/machine,target=/Todo/userdata/ todo-bot
+   ```
+   **_or_** if you don't have the `.env` file setup with your token:
+
+   ```bash
+   docker run -e TOKEN=your_token_here --mount type=bind,source=/path/on/host/machine,target=/Todo/userdata/ todo-bot
+   ```
+
+>Note : Both of the above commands use bind mount, if you want volume mount use the following command:
+
+```bash
+   docker run --env-file .env --mount type=volume,source=todo-user-data,target=/Todo/userdata/ todo-bot
+```
+
+
+#### Docker-Compose
+<sub><i>Docker container (docker-compose.yml)</i></sub>
+
+>Note : Docker-compose.yml is using volume mount, if you want bind mount then you have to configure it yourself.
+
+1. Build the Docker image:
+   ```bash
+   docker-compose build
+   ```
+   Run the Docker container:
+   ```bash
+   docker-compose up
+   ```
+
+
+### Locally
+
+<sub><i>Local machine (laptop, desktop, personal computer)</i></sub>
+
+Run this command when in the directory where the bot is located:
 
    ```bash
    python main.py
    ```
+
+or just double click on the `main.py` file
 
 ## File Structure
 
