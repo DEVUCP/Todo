@@ -2,9 +2,20 @@ import todo
 import json
 import datetime
 
+def GetFilePath(filename : str) -> str:
+    import os
+    # Get the directory where the script is located
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    print(script_dir)
+    # Construct the full path to the save file
+    save_path = os.path.join(script_dir, filename)
+    return save_path
+
+save_file = GetFilePath("userdata/user_accounts.json")
+
 def DelSave(task_indx: int, userid: int):
     user_dict = None
-    with open('user_accounts.json','r') as f:
+    with open(save_file,'r') as f:
         user_dict = json.load(f)
     f.close()
     for key in user_dict:
@@ -16,6 +27,7 @@ def DelSave(task_indx: int, userid: int):
 def SaveAccounts(user_accounts: list):
     user_account_dicts = []
     for user_account in user_accounts:
+
         #print(user_account.tasks[user_accounts.index(user_account)].__dict__)
         task_dicts = []
         for task in user_account.tasks:
@@ -29,7 +41,7 @@ def SaveAccounts(user_accounts: list):
         user_account_dicts.append(user_account_dict)
 
     # save to JSON
-    with open('user_accounts.json', 'w') as f:
+    with open(save_file, 'w') as f:
         json.dump(user_account_dicts, f, indent=4)
 
     for task in user_account.tasks:
@@ -41,7 +53,7 @@ def SaveAccounts(user_accounts: list):
 
 
 def LoadAccounts() -> list:
-    with open('user_accounts.json', 'r') as f:
+    with open(save_file, 'r') as f:
         user_account_dicts = json.load(f)
 
     user_accounts = []

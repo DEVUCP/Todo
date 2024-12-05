@@ -50,14 +50,14 @@ async def on_ready():
     print(f'Logged in as {client.user.name} ({client.user.id})')
     global loaded
     
-    if os.path.exists("user_accounts.json") and not loaded:
+    if os.path.exists("userdata/user_accounts.json") and not loaded:
        # Load accounts from file if it exists
        singletons.account_list = LoadAccounts()
        loaded = True
 
        print("All tasks loaded successfully!")
 
-    elif not os.path.exists("user_accounts.json"):
+    elif not os.path.exists("userdata/user_accounts.json"):
         loaded = True
 
 @client.event
