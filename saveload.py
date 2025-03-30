@@ -32,6 +32,11 @@ def SaveAccounts(user_accounts: list):
         task_dicts = []
         for task in user_account.tasks:
             task_dicts.append(task.__dict__)
+            if task.due != "None" and task.due != None:
+                task.due = datetime.datetime.strptime(task.due,"%Y-%m-%d %H:%M:%S.%f")
+            else:
+                task.due = None
+
         for task in task_dicts:
             task["due"] = str(task["due"])
         user_account_dict = {
@@ -44,11 +49,11 @@ def SaveAccounts(user_accounts: list):
     with open(save_file, 'w') as f:
         json.dump(user_account_dicts, f, indent=4)
 
-    for task in user_account.tasks:
-        if task.due != "None":
-            task.due = datetime.datetime.strptime(task.due,"%Y-%m-%d %H:%M:%S.%f")
-        else:
-            task.due = None
+    # for task in user_account.tasks:
+    #     if task.due != "None":
+    #         task.due = datetime.datetime.strptime(task.due,"%Y-%m-%d %H:%M:%S.%f")
+    #     else:
+    #         task.due = None
 
 
 
