@@ -121,6 +121,9 @@ async def ExecuteAction(command : list[str], message : discord.Message):
             await ShowAllTasks(message=message)
         case "edit":
             await EditTask(command=command,message=message)
+        case "save":
+            SaveAccounts(singletons.account_list)
+            await utils.ExceptionReplyEmbed(message=message, error="Saved!", desc="All tasks have been saved to the file.")
         case _:
             await utils.ExceptionReplyEmbed(message=message,error=f"Invalid action `'{action}'`",desc="use `>help` to see the list of valid actions.")
 
