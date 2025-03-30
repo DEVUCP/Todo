@@ -5,3 +5,17 @@ README.md
 .env*
 .json
 .env_example
+.git
+/pycache
+node_modules/
+dist/
+build/
+*.pyc
+__pycache__/
+.pytest_cache/
+.coverage
+coverage/
+.DS_Store
+*.log
+tmp/
+temp/
