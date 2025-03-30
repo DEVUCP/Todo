@@ -122,7 +122,7 @@ async def ExecuteAction(command : list[str], message : discord.Message):
         case "edit":
             await EditTask(command=command,message=message)
         case _:
-            await utils.ExceptionReplyEmbed(error=f"Invalid action `'{action}'`",desc="use `>help` to see the list of valid actions.")
+            await utils.ExceptionReplyEmbed(message=message,error=f"Invalid action `'{action}'`",desc="use `>help` to see the list of valid actions.")
 
 async def Help(command: list[str], message: discord.Message):
     """Displays available commands."""
