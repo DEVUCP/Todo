@@ -1,12 +1,9 @@
 services:
-  discord-bot:
-    build: .
-    container_name: todo-bot-container
-    env_file:
-      - .env
-    restart: unless-stopped
+  todo-bot:
+    image: theucp/todo-bot
+    container_name: todo-bot
+    environment:
+      - token=<token>
     volumes:
-      - todo-user-data:/Todo/userdata
-  
-volumes:
-  todo-user-data:
+      - /home/discord/todo-data:/Todo/userdata
+    restart: unless-stopped
