@@ -1,5 +1,5 @@
 import todo
-import json
+import pickle
 import datetime
 
 def GetFilePath(filename : str) -> str:
@@ -11,71 +11,38 @@ def GetFilePath(filename : str) -> str:
     save_path = os.path.join(script_dir, filename)
     return save_path
 
-save_file = GetFilePath("userdata/user_accounts.json")
+save_file = GetFilePath("userdata/user_accounts.pickle")
 
 def DelSave(task_indx: int, userid: int):
     user_dict = None
-    with open(save_file,'r') as f:
-        user_dict = json.load(f)
+    with open(save_file,'rb') as f:
+        user_dict = pickle.load(f)
     f.close()
     for key in user_dict:
         if int(key) == userid:
             for task in user_dict[key]:
                 pass
-
-# convert UserAccount objects to dictionaries
 def SaveAccounts(user_accounts: list):
-    user_account_dicts = []
-    for user_account in user_accounts:
+    try:
+        import os
+        directory = os.path.dirname(save_file)
 
-        #print(user_account.tasks[user_accounts.index(user_account)].__dict__)
-        task_dicts = []
-        for task in user_account.tasks:
-            task_dicts.append(task.__dict__)
-            if task.due != "None" and task.due != None:
-                task.due = datetime.datetime.strptime(task.due,"%Y-%m-%d %H:%M:%S.%f")
-            else:
-                task.due = None
+        if not os.path.exists(directory):
+            os.makedirs(directory)
 
-        for task in task_dicts:
-            task["due"] = str(task["due"])
-        user_account_dict = {
-            'userID': user_account.userID,
-            'tasks': task_dicts
-        }
-        user_account_dicts.append(user_account_dict)
+        if not os.path.exists(save_file):
+            with open(save_file, 'wb') as f:
+                pickle.dump([], f)
+        
+        with open(save_file, 'wb') as f:
+            pickle.dump(user_accounts, f)
 
-    # save to JSON
-    with open(save_file, 'w') as f:
-        json.dump(user_account_dicts, f, indent=4)
-
-    # for task in user_account.tasks:
-    #     if task.due != "None":
-    #         task.due = datetime.datetime.strptime(task.due,"%Y-%m-%d %H:%M:%S.%f")
-    #     else:
-    #         task.due = None
-
-
+    except Exception as e:
+        print(e)
+        print("Error saving accounts")
 
 def LoadAccounts() -> list:
-    with open(save_file, 'r') as f:
-        user_account_dicts = json.load(f)
-
-    user_accounts = []
-    for user_account_dict in user_account_dicts:
-        tasks = []
-        for task_dict in user_account_dict['tasks']:
-            task = todo.Task()
-            for key, value in task_dict.items():
-                if key == "due" and value != "None":
-                    value = datetime.datetime.strptime(value,"%Y-%m-%d %H:%M:%S.%f")
-                elif key == "due" and value  == "None":
-                    value = None
-                setattr(task, key, value)
-            tasks.append(task)
-        user_account = todo.UserAccount(user_account_dict['userID'], tasks[0] if tasks else None)
-        user_account.tasks = tasks
-        user_accounts.append(user_account)
+    with open(save_file, 'rb') as f:
+        user_accounts = pickle.load(f)
+        print(user_accounts)
     return user_accounts
-
-
